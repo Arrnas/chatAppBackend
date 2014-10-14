@@ -26,3 +26,4 @@ gem 'spring', :group => :development
 # gem 'ruby-debug19', :require => 'ruby-debug'
 ruby '2.0.0'
 gem 'mongoid'
+gem 'rails_12factor'
