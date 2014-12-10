@@ -11,16 +11,7 @@ module V1
     def index
       @group = @current_user.get_group_by_id(params[:group_id])
       if @group
-        if params[:last] && params[:last].is_a?(Numeric)
-          last = params[:last]
-        else
-          last = 20
-        end
-        if @group.messages.count > last
-          @messages = @group.messages.drop(last)
-        else
-          @messages = @group.messages
-        end
+        @messages = @group.messages
         render json: @messages
       else
         render json: {"error" => "No such group"}, status: :not_found
@@ -89,7 +80,7 @@ module V1
     param :id, String, :required => true, :desc => "Message ID"
     def destroy
       @message = Message.find(params[:id])
-      if @message.author == @current_user
+      if @message && @message.author == @current_user
         @message.destroy
         head :no_content
       else
