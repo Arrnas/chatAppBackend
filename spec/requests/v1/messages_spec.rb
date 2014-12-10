@@ -23,6 +23,15 @@ RSpec.describe "Messages", :type => :request do
       expect(response).to_not be_success
       expect(convertId).to_not include(message.as_json(except: :timestamp))
     end
+
+    it "should display group messages with last" do
+      user1 = create :user
+      user2 = create :user
+      group = create(:group, title: "best chat", users: [current_user,user1])
+      message = create(:message, group: group, author: user1)
+      get access_token_path("/v1/groups/" << group.id << "/messages") << "&last=10"
+      expect(response).to be_success
+    end
   end
 
   describe "POST /v1/groups/:id/messages" do
@@ -32,6 +41,12 @@ RSpec.describe "Messages", :type => :request do
       post access_token_path("/v1/groups/" << group.id << "/messages"), "message" => message.as_json
       expect(response).to be_success
       expect(convertId).to include(message.as_json(except: [:timestamp,:_id]))
+    end
+    it "should fail to create a new message to a nonexisting group" do
+      group = create(:group, title: "best chat", users: [current_user])
+      message = build(:message, group: group, author: current_user)
+      post access_token_path("/v1/groups/" << "notanid" << "/messages"), "message" => message.as_json
+      expect(response).to_not be_success
     end
   end
 
@@ -59,11 +74,17 @@ RSpec.describe "Messages", :type => :request do
   end
 
   describe "DELETE /v1/messages" do
-    it "should display created message" do
+    it "should delete message" do
       group = create(:group, title: "best chat", users: [current_user])
       message = create(:message, group: group, author: current_user)
       delete access_token_path("/v1/messages/" << message.id)
       expect(response).to be_success
+    end
+    it "should fail to delete message" do
+      group = create(:group, title: "best chat", users: [current_user])
+      message = create(:message, group: group, author: current_user)
+      delete access_token_path("/v1/messages/" << "notanid")
+      expect(response).to_not be_success
     end
   end
 
