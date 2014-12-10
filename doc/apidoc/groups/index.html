@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link type='text/css' rel='stylesheet' href='../../apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../../apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../../apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../../apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li>
+    <a href='../../apidoc.html'>ChatAppBackend 1.0</a>
+    <span class='divider'>/</span>
+  </li>
+  <li>
+    <a href='../../apidoc/groups.html'>
+      Groups
+      
+    </a>
+    <span class='divider'>/</span>
+  </li>
+  <li class='active'>index</li>
+  
+
+</ul>
+
+  <div class='page-header'>
+    <h1>
+      GET /v1/groups
+      <br>
+      <small>List requesters groups</small>
+    </h1>
+  </div>
+
+<div>
+
+  
+
+
+
+
+  <h2>Examples</h2>
+    <pre class="prettyprint">GET /v1/groups?access_token=50a22544eb3507da1a03fc2e4be46007
+200
+[
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a74c0000&quot;
+    },
+    &quot;title&quot;: &quot;foo2&quot;,
+    &quot;user_ids&quot;: [
+      {
+        &quot;$oid&quot;: &quot;548774f341726e53a74b0000&quot;
+      }
+    ]
+  },
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a74d0000&quot;
+    },
+    &quot;title&quot;: &quot;foo3&quot;,
+    &quot;user_ids&quot;: [
+      {
+        &quot;$oid&quot;: &quot;548774f341726e53a74b0000&quot;
+      }
+    ]
+  },
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a74e0000&quot;
+    },
+    &quot;title&quot;: &quot;foo4&quot;,
+    &quot;user_ids&quot;: [
+      {
+        &quot;$oid&quot;: &quot;548774f341726e53a74b0000&quot;
+      }
+    ]
+  }
+]</pre>
+
+  <h2>Params</h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+</div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../../apidoc/javascripts/bundled/jquery-1.7.2.js'></script>
+<script type='text/javascript' src='../../apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../../apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../../apidoc/javascripts/apipie.js'></script>
+</body>
+</html>

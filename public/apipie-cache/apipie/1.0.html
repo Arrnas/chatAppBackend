@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link type='text/css' rel='stylesheet' href='../apipie/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../apipie/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../apipie/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li class='active'><a href='../apipie/1.0.html'>ChatAppBackend 1.0</a></li>
+  
+</ul>
+
+<div>Another API description</div>
+
+<h1 class='page-header'>Resources</h1>
+
+  <h2>
+    <a href='../apipie/1.0/friendships.html'>
+      Friendships
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/index.html'>GET /v1/friends</a>
+            </td>
+            <td width='60%'>List current users friends</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/index_pending.html'>GET /v1/pending</a>
+            </td>
+            <td width='60%'>list current users pending friends</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/show.html'>GET /v1/friends/:id</a>
+            </td>
+            <td width='60%'>Show a friend</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/create.html'>POST /v1/friends</a>
+            </td>
+            <td width='60%'>Create a friendship</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/update.html'>PATCH /v1/friends/:id</a>
+            </td>
+            <td width='60%'>Update a friendship</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/update.html'>PUT /v1/friends/:id</a>
+            </td>
+            <td width='60%'>Update a friendship</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/friendships/destroy.html'>DELETE /v1/friends/:id</a>
+            </td>
+            <td width='60%'>Destroy a friendship</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='../apipie/1.0/groups.html'>
+      Groups
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/groups/index.html'>GET /v1/groups</a>
+            </td>
+            <td width='60%'>List requesters groups</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/groups/show.html'>GET /v1/groups/:id</a>
+            </td>
+            <td width='60%'>Show a group</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/groups/create.html'>POST /v1/groups</a>
+            </td>
+            <td width='60%'>Create a group</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/groups/update.html'>PATCH /v1/groups/:id</a>
+            </td>
+            <td width='60%'>Update a group</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/groups/update.html'>PUT /v1/groups/:id</a>
+            </td>
+            <td width='60%'>Update a group</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/groups/destroy.html'>DELETE /v1/groups/:id</a>
+            </td>
+            <td width='60%'>Destroy a group</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='../apipie/1.0/login.html'>
+      Login
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/login/create.html'>POST /v1/login</a>
+            </td>
+            <td width='60%'>Get access token</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='../apipie/1.0/messages.html'>
+      Messages
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/messages/index.html'>GET /v1/groups/:group_id/messages</a>
+            </td>
+            <td width='60%'>List messages</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/messages/show.html'>GET /v1/messages/:id</a>
+            </td>
+            <td width='60%'>Show a message</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/messages/create.html'>POST /v1/groups/:group_id/messages</a>
+            </td>
+            <td width='60%'>Create a message</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/messages/update.html'>PATCH /v1/messages/:id</a>
+            </td>
+            <td width='60%'>Update a message</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/messages/update.html'>PUT /v1/messages/:id</a>
+            </td>
+            <td width='60%'>Update a message</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/messages/destroy.html'>DELETE /v1/messages/:id</a>
+            </td>
+            <td width='60%'>Destroy a message</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='../apipie/1.0/users.html'>
+      Users
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/users/index.html'>GET /v1/profile</a>
+            </td>
+            <td width='60%'>List users</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/users/index.html'>GET /v1/users</a>
+            </td>
+            <td width='60%'>List users</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/users/show.html'>GET /v1/users/:id</a>
+            </td>
+            <td width='60%'>Show an user</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/users/create.html'>POST /v1/users</a>
+            </td>
+            <td width='60%'>Create a user</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/users/update.html'>PATCH /v1/profile</a>
+            </td>
+            <td width='60%'>Update a user</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='../apipie/1.0/users/update.html'>PUT /v1/profile</a>
+            </td>
+            <td width='60%'>Update a user</td>
+          </tr>
+    </tbody>
+  </table>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../apipie/javascripts/bundled/jquery-1.7.2.js'></script>
+<script type='text/javascript' src='../apipie/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../apipie/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../apipie/javascripts/apipie.js'></script>
+</body>
+</html>

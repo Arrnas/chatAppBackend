@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li>
+    <a href='../apidoc.html'>ChatAppBackend 1.0</a>
+    <span class='divider'>/</span>
+  </li>
+  <li class='active'>
+    Messages
+    
+  </li>
+  
+</ul>
+
+<div class='page-header'>
+  <h1>
+    Messages
+    <br>
+    <small></small>
+  </h1>
+</div>
+
+
+
+
+<div class='accordion' id='accordion'>
+
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/messages/index.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-index'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /v1/groups/:group_id/messages
+          </a>
+          <br>
+          <small>List messages</small>
+        </h2>
+    </div>
+
+
+    <div id='description-index' class='collapse accordion-body'>
+      
+
+
+  <h3>Errors</h3>
+    404
+    
+    <br>
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">GET /v1/groups/548774f341726e53a76a0000/messages?access_token=b4f095048e058aa386b237ddeb60825b
+200
+[
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a76b0000&quot;
+    },
+    &quot;author_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a7670000&quot;
+    },
+    &quot;group_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a76a0000&quot;
+    },
+    &quot;message_body&quot;: &quot;foo2&quot;,
+    &quot;timestamp&quot;: &quot;2014-12-09T22:17:21.224Z&quot;
+  }
+]</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>group_id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/messages/show.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-show'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /v1/messages/:id
+          </a>
+          <br>
+          <small>Show a message</small>
+        </h2>
+    </div>
+
+
+    <div id='description-show' class='collapse accordion-body'>
+      
+
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">GET /v1/messages/548774f441726e53a7720000?access_token=1bc8ff96ef1c7957192786ebd480d885
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7720000&quot;
+  },
+  &quot;author_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7700000&quot;
+  },
+  &quot;group_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7710000&quot;
+  },
+  &quot;message_body&quot;: &quot;foo4&quot;,
+  &quot;timestamp&quot;: &quot;2014-12-09T22:17:21.224Z&quot;
+}</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Message ID</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/messages/create.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-create'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            POST /v1/groups/:group_id/messages
+          </a>
+          <br>
+          <small>Create a message</small>
+        </h2>
+    </div>
+
+
+    <div id='description-create' class='collapse accordion-body'>
+      
+
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">POST /v1/groups/548774f341726e53a76d0000/messages?access_token=eedc00b19cee8649416312b7c6770251
+message[_id]=548774f341726e53a76e0000&amp;message[author_id]=548774f341726e53a76c0000&amp;message[group_id]=548774f341726e53a76d0000&amp;message[message_body]=foo3&amp;message[timestamp]=2014-12-09+22%3A17%3A21+UTC
+201
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a76f0000&quot;
+  },
+  &quot;author_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a76c0000&quot;
+  },
+  &quot;group_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a76d0000&quot;
+  },
+  &quot;message_body&quot;: &quot;foo3&quot;,
+  &quot;timestamp&quot;: &quot;2014-12-09T22:17:23.985Z&quot;
+}</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>group_id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>message </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be a Hash
+
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>message[message_body] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/messages/update.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PATCH /v1/messages/:id
+          </a>
+          <br>
+          <small>Update a message</small>
+        </h2>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PUT /v1/messages/:id
+          </a>
+          <br>
+          <small>Update a message</small>
+        </h2>
+    </div>
+
+
+    <div id='description-update' class='collapse accordion-body'>
+      
+
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">PUT /v1/messages/548774f441726e53a7750000?access_token=d64d2bf8d2d1151a7d4df7ec5b58b908
+message[message_body]=foo6
+204</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Message ID</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/messages/destroy.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-destroy'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            DELETE /v1/messages/:id
+          </a>
+          <br>
+          <small>Destroy a message</small>
+        </h2>
+    </div>
+
+
+    <div id='description-destroy' class='collapse accordion-body'>
+      
+
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">DELETE /v1/messages/548774f441726e53a7780000?access_token=36cb47bfd41135aeb034d02ba55cecae
+204</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Message ID</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+    </div>
+</div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../apidoc/javascripts/bundled/jquery-1.7.2.js'></script>
+<script type='text/javascript' src='../apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../apidoc/javascripts/apipie.js'></script>
+</body>
+</html>

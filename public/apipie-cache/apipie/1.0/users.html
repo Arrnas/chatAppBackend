@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li>
+    <a href='../../apipie/1.0.html'>ChatAppBackend 1.0</a>
+    <span class='divider'>/</span>
+  </li>
+  <li class='active'>
+    Users
+    
+  </li>
+  
+</ul>
+
+<div class='page-header'>
+  <h1>
+    Users
+    <br>
+    <small></small>
+  </h1>
+</div>
+
+
+
+
+<div class='accordion' id='accordion'>
+
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/users/index.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-index'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /v1/profile
+          </a>
+          <br>
+          <small>List users</small>
+        </h2>
+        <h2>
+          <a href='#description-index'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /v1/users
+          </a>
+          <br>
+          <small>List users</small>
+        </h2>
+    </div>
+
+
+    <div id='description-index' class='collapse accordion-body'>
+      
+
+
+  <h3>Errors</h3>
+    401
+    
+    <br>
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">GET /v1/profile
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a77a0000&quot;
+  },
+  &quot;deviceid&quot;: &quot;foo76bar&quot;,
+  &quot;email&quot;: &quot;foo77@example.com&quot;,
+  &quot;group_ids&quot;: [],
+  &quot;username&quot;: &quot;foo75&quot;
+}</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/users/show.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-show'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /v1/users/:id
+          </a>
+          <br>
+          <small>Show an user</small>
+        </h2>
+    </div>
+
+
+    <div id='description-show' class='collapse accordion-body'>
+      
+
+
+  <h3>Errors</h3>
+    404
+    
+    <br>
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">GET /v1/users/548774f441726e53a77e0000?access_token=353722be35511426b6c4a543c6d80321
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a77e0000&quot;
+  },
+  &quot;deviceid&quot;: &quot;foo81bar&quot;,
+  &quot;email&quot;: &quot;foo82@example.com&quot;,
+  &quot;group_ids&quot;: [],
+  &quot;username&quot;: &quot;foo80&quot;
+}</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User ID</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/users/create.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-create'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            POST /v1/users
+          </a>
+          <br>
+          <small>Create a user</small>
+        </h2>
+    </div>
+
+
+    <div id='description-create' class='collapse accordion-body'>
+      
+
+
+  <h3>Errors</h3>
+    422
+    
+    <br>
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">POST /v1/users
+user[username]=foo74&amp;user[password]=foobar&amp;user[password_confirmation]=foobar&amp;user[email]=foo76%40example.com&amp;user[deviceid]=foo75bar
+201
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7790000&quot;
+  },
+  &quot;deviceid&quot;: &quot;foo75bar&quot;,
+  &quot;email&quot;: &quot;foo76@example.com&quot;,
+  &quot;group_ids&quot;: [],
+  &quot;username&quot;: &quot;foo74&quot;
+}</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>user </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be a Hash
+
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[username] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[password] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[password_confirmation] </strong><br>
+      <small>
+        optional
+        , nil allowed
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[deviceid] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[email] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+
+    </tbody>
+  </table>
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/users/update.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PATCH /v1/profile
+          </a>
+          <br>
+          <small>Update a user</small>
+        </h2>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PUT /v1/profile
+          </a>
+          <br>
+          <small>Update a user</small>
+        </h2>
+    </div>
+
+
+    <div id='description-update' class='collapse accordion-body'>
+      
+
+
+  <h3>Errors</h3>
+    422
+    
+    <br>
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">PATCH /v1/profile?access_token=cba71e4bb12fb231a390c4bdbc6b86ea
+user[username]=foo76&amp;user[password]=foobar&amp;user[password_confirmation]=foobar&amp;user[email]=foo78%40example.com&amp;user[deviceid]=foo77bar
+204</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>access_token </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>user </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be a Hash
+
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[username] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[password] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[password_confirmation] </strong><br>
+      <small>
+        optional
+        , nil allowed
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[deviceid] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[email] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: Must be String
+
+
+    </td>
+
+  </tr>
+
+  
+
+
+    </tbody>
+  </table>
+
+    </div>
+</div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../../apipie/javascripts/bundled/jquery-1.7.2.js'></script>
+<script type='text/javascript' src='../../apipie/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../../apipie/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../../apipie/javascripts/apipie.js'></script>
+</body>
+</html>

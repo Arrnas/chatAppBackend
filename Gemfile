@@ -28,11 +28,13 @@ gem 'rails_12factor'
 
 gem 'bcrypt'
 
-gem "spring-commands-rspec", group: :development
+gem 'spring-commands-rspec', group: :development
 
 gem 'simplecov', :require => false, :group => :test
 
-gem "rack-test", require: "rack/test"
+gem 'rack-test', require: 'rack/test'
+
+gem 'apipie-rails'
 
 group :development, :test do
   gem 'rspec-rails'

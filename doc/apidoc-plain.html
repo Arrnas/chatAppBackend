@@ -1,0 +1,1587 @@
+  <h4><a href='#friendships'>Friendships</a></h4>
+  <ul>
+      <li><a href='#friendships-index'>index</a></li>
+      <li><a href='#friendships-index_pending'>index_pending</a></li>
+      <li><a href='#friendships-show'>show</a></li>
+      <li><a href='#friendships-create'>create</a></li>
+      <li><a href='#friendships-update'>update</a></li>
+      <li><a href='#friendships-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#groups'>Groups</a></h4>
+  <ul>
+      <li><a href='#groups-index'>index</a></li>
+      <li><a href='#groups-show'>show</a></li>
+      <li><a href='#groups-create'>create</a></li>
+      <li><a href='#groups-update'>update</a></li>
+      <li><a href='#groups-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#login'>Login</a></h4>
+  <ul>
+      <li><a href='#login-create'>create</a></li>
+  </ul>
+  <h4><a href='#messages'>Messages</a></h4>
+  <ul>
+      <li><a href='#messages-index'>index</a></li>
+      <li><a href='#messages-show'>show</a></li>
+      <li><a href='#messages-create'>create</a></li>
+      <li><a href='#messages-update'>update</a></li>
+      <li><a href='#messages-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#users'>Users</a></h4>
+  <ul>
+      <li><a href='#users-index'>index</a></li>
+      <li><a href='#users-show'>show</a></li>
+      <li><a href='#users-create'>create</a></li>
+      <li><a href='#users-update'>update</a></li>
+  </ul>
+
+
+
+  <hr/>
+
+  <div>
+    <h2 id="friendships">
+      <a href='#friendships'>Friendships</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="friendships-index">
+      <a href='#friendships'>Friendships</a> / <a href='#friendships-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/friends
+            <br>
+            <small>List current users friends</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/friends?access_token=fc1c68051f6bd9f902d1e5e7787d263d
+200
+[
+
+]</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="friendships-index_pending">
+      <a href='#friendships'>Friendships</a> / <a href='#friendships-index_pending'>index_pending</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/pending
+            <br>
+            <small>list current users pending friends</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/pending?access_token=679ef9e40934d16c560536a3e0c36d94
+200
+[
+  {
+    &quot;id&quot;: {
+      &quot;$oid&quot;: &quot;548774f241726e53a7350000&quot;
+    },
+    &quot;friend_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f241726e53a7320000&quot;
+    },
+    &quot;pending&quot;: true
+  }
+]</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="friendships-show">
+      <a href='#friendships'>Friendships</a> / <a href='#friendships-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/friends/:id
+            <br>
+            <small>Show a friend</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/friends/548774f241726e53a72f0000?access_token=c5f1925fbd139b92f9fac892f59ff27b
+200
+{
+  &quot;id&quot;: {
+    &quot;$oid&quot;: &quot;548774f241726e53a72f0000&quot;
+  },
+  &quot;owner_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f241726e53a72e0000&quot;
+  },
+  &quot;friend_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f241726e53a72d0000&quot;
+  },
+  &quot;pending&quot;: false
+}</pre>
+
+          <h4>Errors</h4>
+            404
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Friendship ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="friendships-create">
+      <a href='#friendships'>Friendships</a> / <a href='#friendships-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /v1/friends
+            <br>
+            <small>Create a friendship</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /v1/friends?access_token=de2a62d86610da4ee2526ad507713d47
+friendship[id]=548774f341726e53a7390000&amp;friendship[owner_id]=548774f341726e53a7370000&amp;friendship[friend_id]=548774f341726e53a7380000&amp;friendship[pending]=true
+422
+{
+  &quot;error&quot;: [
+    &quot;You can&#39;t be your own friend!&quot;
+  ]
+}</pre>
+
+          <h4>Errors</h4>
+            422
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>friendship </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>friend_id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="friendships-update">
+      <a href='#friendships'>Friendships</a> / <a href='#friendships-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PATCH /v1/friends/:id
+            <br>
+            <small>Update a friendship</small>
+          </h4>
+          <h4>
+              PUT /v1/friends/:id
+            <br>
+            <small>Update a friendship</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">PUT /v1/friends/548774f341726e53a73f0000?access_token=86194d54ac1e0801ab71065a420af659
+friendship[pending]=false
+204</pre>
+
+          <h4>Errors</h4>
+            404
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+            422
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Friendship ID</p>
+
+    </li>
+    
+    <li>
+      <strong>friendship </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>pending </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="friendships-destroy">
+      <a href='#friendships'>Friendships</a> / <a href='#friendships-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /v1/friends/:id
+            <br>
+            <small>Destroy a friendship</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">DELETE /v1/friends/548774f341726e53a74a0000?access_token=91d41afc3a6d4642f1d8a7b995971df5
+friendship[id]=548774f341726e53a74a0000&amp;friendship[owner_id]=548774f341726e53a7480000&amp;friendship[friend_id]=548774f341726e53a7490000
+204</pre>
+
+          <h4>Errors</h4>
+            404
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Friendship ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="groups">
+      <a href='#groups'>Groups</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="groups-index">
+      <a href='#groups'>Groups</a> / <a href='#groups-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/groups
+            <br>
+            <small>List requesters groups</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/groups?access_token=50a22544eb3507da1a03fc2e4be46007
+200
+[
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a74c0000&quot;
+    },
+    &quot;title&quot;: &quot;foo2&quot;,
+    &quot;user_ids&quot;: [
+      {
+        &quot;$oid&quot;: &quot;548774f341726e53a74b0000&quot;
+      }
+    ]
+  },
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a74d0000&quot;
+    },
+    &quot;title&quot;: &quot;foo3&quot;,
+    &quot;user_ids&quot;: [
+      {
+        &quot;$oid&quot;: &quot;548774f341726e53a74b0000&quot;
+      }
+    ]
+  },
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a74e0000&quot;
+    },
+    &quot;title&quot;: &quot;foo4&quot;,
+    &quot;user_ids&quot;: [
+      {
+        &quot;$oid&quot;: &quot;548774f341726e53a74b0000&quot;
+      }
+    ]
+  }
+]</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="groups-show">
+      <a href='#groups'>Groups</a> / <a href='#groups-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/groups/:id
+            <br>
+            <small>Show a group</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/groups/548774f341726e53a75b0000?access_token=d44391fced5ccfeac2c9b36857e5ada0
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a75b0000&quot;
+  },
+  &quot;title&quot;: &quot;foo8&quot;,
+  &quot;user_ids&quot;: [
+    {
+      &quot;$oid&quot;: &quot;548774f341726e53a75a0000&quot;
+    },
+    {
+      &quot;$oid&quot;: &quot;548774f341726e53a7580000&quot;
+    },
+    {
+      &quot;$oid&quot;: &quot;548774f341726e53a7590000&quot;
+    }
+  ]
+}</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Group ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="groups-create">
+      <a href='#groups'>Groups</a> / <a href='#groups-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /v1/groups
+            <br>
+            <small>Create a group</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /v1/groups?access_token=f80f686492cbc0516d8bf528c0bc119c
+group[_id]=548774f341726e53a7510000&amp;group[title]=foo5&amp;group[user_ids][]=548774f341726e53a74f0000&amp;group[user_ids][]=548774f341726e53a7500000
+201
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a7530000&quot;
+  },
+  &quot;title&quot;: &quot;foo5&quot;,
+  &quot;user_ids&quot;: [
+    {
+      &quot;$oid&quot;: &quot;548774f341726e53a74f0000&quot;
+    },
+    {
+      &quot;$oid&quot;: &quot;548774f341726e53a7500000&quot;
+    },
+    {
+      &quot;$oid&quot;: &quot;548774f341726e53a7520000&quot;
+    }
+  ]
+}</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>group </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>title </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>user_ids </strong>:
+      <small>
+        required
+        
+          [ Must be an array of any type ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="groups-update">
+      <a href='#groups'>Groups</a> / <a href='#groups-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PATCH /v1/groups/:id
+            <br>
+            <small>Update a group</small>
+          </h4>
+          <h4>
+              PUT /v1/groups/:id
+            <br>
+            <small>Update a group</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">PATCH /v1/groups/548774f341726e53a75b0000?access_token=d44391fced5ccfeac2c9b36857e5ada0
+group[_id]=548774f341726e53a75c0000&amp;group[title]=foo8&amp;group[user_ids][]=548774f341726e53a75a0000&amp;group[user_ids][]=548774f341726e53a7580000&amp;group[user_ids][]=548774f341726e53a7590000
+204</pre>
+
+          <h4>Errors</h4>
+            404
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Group ID</p>
+
+    </li>
+    
+    <li>
+      <strong>group </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>title </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="groups-destroy">
+      <a href='#groups'>Groups</a> / <a href='#groups-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /v1/groups/:id
+            <br>
+            <small>Destroy a group</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">DELETE /v1/groups/548774f341726e53a7650000?access_token=314f495c24acd757edffc11450ebe686
+204</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Group ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="login">
+      <a href='#login'>Login</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="login-create">
+      <a href='#login'>Login</a> / <a href='#login-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /v1/login
+            <br>
+            <small>Get access token</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /v1/login
+username=foo31&amp;password=foobar
+200
+{
+  &quot;access_token&quot;: &quot;fc1c68051f6bd9f902d1e5e7787d263d&quot;
+}</pre>
+
+          <h4>Errors</h4>
+            401
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>username </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>password </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="messages">
+      <a href='#messages'>Messages</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="messages-index">
+      <a href='#messages'>Messages</a> / <a href='#messages-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/groups/:group_id/messages
+            <br>
+            <small>List messages</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/groups/548774f341726e53a76a0000/messages?access_token=b4f095048e058aa386b237ddeb60825b
+200
+[
+  {
+    &quot;_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a76b0000&quot;
+    },
+    &quot;author_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a7670000&quot;
+    },
+    &quot;group_id&quot;: {
+      &quot;$oid&quot;: &quot;548774f341726e53a76a0000&quot;
+    },
+    &quot;message_body&quot;: &quot;foo2&quot;,
+    &quot;timestamp&quot;: &quot;2014-12-09T22:17:21.224Z&quot;
+  }
+]</pre>
+
+          <h4>Errors</h4>
+            404
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>group_id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="messages-show">
+      <a href='#messages'>Messages</a> / <a href='#messages-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/messages/:id
+            <br>
+            <small>Show a message</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/messages/548774f441726e53a7720000?access_token=1bc8ff96ef1c7957192786ebd480d885
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7720000&quot;
+  },
+  &quot;author_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7700000&quot;
+  },
+  &quot;group_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7710000&quot;
+  },
+  &quot;message_body&quot;: &quot;foo4&quot;,
+  &quot;timestamp&quot;: &quot;2014-12-09T22:17:21.224Z&quot;
+}</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Message ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="messages-create">
+      <a href='#messages'>Messages</a> / <a href='#messages-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /v1/groups/:group_id/messages
+            <br>
+            <small>Create a message</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /v1/groups/548774f341726e53a76d0000/messages?access_token=eedc00b19cee8649416312b7c6770251
+message[_id]=548774f341726e53a76e0000&amp;message[author_id]=548774f341726e53a76c0000&amp;message[group_id]=548774f341726e53a76d0000&amp;message[message_body]=foo3&amp;message[timestamp]=2014-12-09+22%3A17%3A21+UTC
+201
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a76f0000&quot;
+  },
+  &quot;author_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a76c0000&quot;
+  },
+  &quot;group_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f341726e53a76d0000&quot;
+  },
+  &quot;message_body&quot;: &quot;foo3&quot;,
+  &quot;timestamp&quot;: &quot;2014-12-09T22:17:23.985Z&quot;
+}</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>group_id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>message </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>message_body </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="messages-update">
+      <a href='#messages'>Messages</a> / <a href='#messages-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PATCH /v1/messages/:id
+            <br>
+            <small>Update a message</small>
+          </h4>
+          <h4>
+              PUT /v1/messages/:id
+            <br>
+            <small>Update a message</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">PUT /v1/messages/548774f441726e53a7750000?access_token=d64d2bf8d2d1151a7d4df7ec5b58b908
+message[message_body]=foo6
+204</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Message ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="messages-destroy">
+      <a href='#messages'>Messages</a> / <a href='#messages-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /v1/messages/:id
+            <br>
+            <small>Destroy a message</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">DELETE /v1/messages/548774f441726e53a7780000?access_token=36cb47bfd41135aeb034d02ba55cecae
+204</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>Message ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="users">
+      <a href='#users'>Users</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="users-index">
+      <a href='#users'>Users</a> / <a href='#users-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/profile
+            <br>
+            <small>List users</small>
+          </h4>
+          <h4>
+              GET /v1/users
+            <br>
+            <small>List users</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/profile
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a77a0000&quot;
+  },
+  &quot;deviceid&quot;: &quot;foo76bar&quot;,
+  &quot;email&quot;: &quot;foo77@example.com&quot;,
+  &quot;group_ids&quot;: [],
+  &quot;username&quot;: &quot;foo75&quot;
+}</pre>
+
+          <h4>Errors</h4>
+            401
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="users-show">
+      <a href='#users'>Users</a> / <a href='#users-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /v1/users/:id
+            <br>
+            <small>Show an user</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">GET /v1/users/548774f441726e53a77e0000?access_token=353722be35511426b6c4a543c6d80321
+200
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a77e0000&quot;
+  },
+  &quot;deviceid&quot;: &quot;foo81bar&quot;,
+  &quot;email&quot;: &quot;foo82@example.com&quot;,
+  &quot;group_ids&quot;: [],
+  &quot;username&quot;: &quot;foo80&quot;
+}</pre>
+
+          <h4>Errors</h4>
+            404
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+<p>User ID</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="users-create">
+      <a href='#users'>Users</a> / <a href='#users-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /v1/users
+            <br>
+            <small>Create a user</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /v1/users
+user[username]=foo74&amp;user[password]=foobar&amp;user[password_confirmation]=foobar&amp;user[email]=foo76%40example.com&amp;user[deviceid]=foo75bar
+201
+{
+  &quot;_id&quot;: {
+    &quot;$oid&quot;: &quot;548774f441726e53a7790000&quot;
+  },
+  &quot;deviceid&quot;: &quot;foo75bar&quot;,
+  &quot;email&quot;: &quot;foo76@example.com&quot;,
+  &quot;group_ids&quot;: [],
+  &quot;username&quot;: &quot;foo74&quot;
+}</pre>
+
+          <h4>Errors</h4>
+            422
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>user </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>username </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>password </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>password_confirmation </strong>:
+      <small>
+        optional
+        , nil allowed
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>deviceid </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>email </strong>:
+      <small>
+        required
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="users-update">
+      <a href='#users'>Users</a> / <a href='#users-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PATCH /v1/profile
+            <br>
+            <small>Update a user</small>
+          </h4>
+          <h4>
+              PUT /v1/profile
+            <br>
+            <small>Update a user</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">PATCH /v1/profile?access_token=cba71e4bb12fb231a390c4bdbc6b86ea
+user[username]=foo76&amp;user[password]=foobar&amp;user[password_confirmation]=foobar&amp;user[email]=foo78%40example.com&amp;user[deviceid]=foo77bar
+204</pre>
+
+          <h4>Errors</h4>
+            422
+            
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>access_token </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+<p>Access token of the requesting user, can be passed in the request header</p>
+
+    </li>
+    
+    <li>
+      <strong>user </strong>:
+      <small>
+        required
+        
+          [ Must be a Hash ]
+      </small>
+      
+    </li>
+    <ul>
+    <li>
+      <strong>username </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>password </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>password_confirmation </strong>:
+      <small>
+        optional
+        , nil allowed
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>deviceid </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+    <li>
+      <strong>email </strong>:
+      <small>
+        optional
+        
+          [ Must be String ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>

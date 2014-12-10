@@ -3,6 +3,8 @@ module V1
     before_filter :restrict_access
     # GET /friends
     # GET /friends.json
+    api :GET, "/v1/friends", "List current users friends"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
     def index
       @friendships = @current_user.friends
 
@@ -10,15 +12,20 @@ module V1
     end
     # GET /pending
     # GET /pending.json
+    api :GET, "/v1/pending", "list current users pending friends"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
     def index_pending
       @friendships = @current_user.friends_pending
 
-      #render text: params
       render json: @friendships
     end
 
     # GET /friends/1
     # GET /friends/1.json
+    api :GET, "/v1/friends/:id", "Show a friend"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :id, String, :required => true, :desc => "Friendship ID"
+    error :code => 404
     def show
       @friendship = @current_user.find_friendship(params[:id]).first
 
@@ -29,8 +36,24 @@ module V1
       end
     end
 
+    def_param_group :friendship do
+      param :friendship, Hash, :action_aware => true, :required => true, :allows_nil => false do
+        param :friend_id, String, :required => true
+      end
+    end
+
+    def_param_group :friendship_update do
+      param :friendship, Hash, :action_aware => true, :required => true, :allows_nil => false do
+        param :pending, String, :required => true
+      end
+    end
+
     # POST /friends
     # POST /friends.json
+    api :POST, "/v1/friends", "Create a friendship"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param_group :friendship
+    error :code => 422
     def create
       @friendship = @current_user.friendships.new(friendship_create_params)
 
@@ -43,6 +66,13 @@ module V1
 
     # PATCH/PUT /friends/1
     # PATCH/PUT /friends/1.json
+    api :PATCH, "/v1/friends/:id", "Update a friendship"
+    api :PUT, "/v1/friends/:id", "Update a friendship"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :id, String, :required => true, :desc => "Friendship ID"
+    param_group :friendship_update
+    error :code => 404
+    error :code => 422
     def update
       @friendship = @current_user.find_pending_friendship(params[:id]).first
       if @friendship
@@ -58,6 +88,10 @@ module V1
 
     # DELETE /friends/1
     # DELETE /friends/1.json
+    api :DELETE, "/v1/friends/:id", "Destroy a friendship"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :id, String, :required => true, :desc => "Friendship ID"
+    error :code => 404
     def destroy
       @friendship = @current_user.find_friendship(params[:id]).first
       if @friendship
@@ -71,7 +105,7 @@ module V1
     private
 
       def friendship_create_params
-        params.require(:friendship).permit(:pending,:friend_id)
+        params.require(:friendship).permit(:friend_id)
       end
 
       def friendship_update_params

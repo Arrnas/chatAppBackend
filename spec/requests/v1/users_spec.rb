@@ -16,8 +16,9 @@ RSpec.describe "Users", :type => :request do
     end
 
     it "fails to create a new user with wrong parameters" do
-      friendship = attributes_for :friendship
-      post "/v1/users", "user" => friendship.as_json
+      user = attributes_for :user
+      user[:email] = "wrong"
+      post "/v1/users", "user" => user
       expect(response).to have_http_status(422)
     end
   end
