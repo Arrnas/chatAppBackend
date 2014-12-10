@@ -1,0 +1,1589 @@
+{
+  "friendships#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/friends",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=de2a62d86610da4ee2526ad507713d47",
+      "request_data": "friendship[id]=548774f341726e53a7390000&friendship[owner_id]=548774f341726e53a7370000&friendship[friend_id]=548774f341726e53a7380000&friendship[pending]=true",
+      "response_data": {
+        "error": [
+          "You can't be your own friend!"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/friends",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=de2a62d86610da4ee2526ad507713d47",
+      "request_data": "friendship[id]=548774f341726e53a73b0000&friendship[owner_id]=548774f341726e53a7380000&friendship[friend_id]=548774f341726e53a7370000&friendship[pending]=true",
+      "response_data": {
+        "id": {
+          "$oid": "548774f341726e53a73c0000"
+        },
+        "owner_id": {
+          "$oid": "548774f341726e53a7380000"
+        },
+        "friend_id": {
+          "$oid": "548774f341726e53a7370000"
+        },
+        "pending": true
+      },
+      "code": 201,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "friendships#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/v1/friends/548774f341726e53a74a0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=91d41afc3a6d4642f1d8a7b995971df5",
+      "request_data": "friendship[id]=548774f341726e53a74a0000&friendship[owner_id]=548774f341726e53a7480000&friendship[friend_id]=548774f341726e53a7490000",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v1/friends/wrongid",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=91d41afc3a6d4642f1d8a7b995971df5",
+      "request_data": "friendship[id]=548774f341726e53a74a0000&friendship[owner_id]=548774f341726e53a7480000&friendship[friend_id]=548774f341726e53a7490000",
+      "response_data": {
+        "error": "Friendship not found"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "friendships#index": [
+    {
+      "verb": "GET",
+      "path": "/v1/friends",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=fc1c68051f6bd9f902d1e5e7787d263d",
+      "request_data": null,
+      "response_data": [
+
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/friends",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=fc1c68051f6bd9f902d1e5e7787d263d",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": {
+            "$oid": "548774f241726e53a72c0000"
+          },
+          "friend_id": {
+            "$oid": "548774f241726e53a72a0000"
+          },
+          "pending": false
+        },
+        {
+          "id": {
+            "$oid": "548774f241726e53a72b0000"
+          },
+          "friend_id": {
+            "$oid": "548774f241726e53a7290000"
+          },
+          "pending": false
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "friendships#index_pending": [
+    {
+      "verb": "GET",
+      "path": "/v1/pending",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=679ef9e40934d16c560536a3e0c36d94",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": {
+            "$oid": "548774f241726e53a7350000"
+          },
+          "friend_id": {
+            "$oid": "548774f241726e53a7320000"
+          },
+          "pending": true
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/pending",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": [
+        {
+          "id": {
+            "$oid": "548774f241726e53a7350000"
+          },
+          "friend_id": {
+            "$oid": "548774f241726e53a7320000"
+          },
+          "pending": true
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/pending",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=ca78b0f75c55b7bf2e4e26cff841c885",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": {
+            "$oid": "548774f241726e53a7360000"
+          },
+          "friend_id": {
+            "$oid": "548774f241726e53a7340000"
+          },
+          "pending": true
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/pending",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": [
+        {
+          "id": {
+            "$oid": "548774f241726e53a7360000"
+          },
+          "friend_id": {
+            "$oid": "548774f241726e53a7340000"
+          },
+          "pending": true
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "friendships#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/friends/548774f241726e53a72f0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=c5f1925fbd139b92f9fac892f59ff27b",
+      "request_data": null,
+      "response_data": {
+        "id": {
+          "$oid": "548774f241726e53a72f0000"
+        },
+        "owner_id": {
+          "$oid": "548774f241726e53a72e0000"
+        },
+        "friend_id": {
+          "$oid": "548774f241726e53a72d0000"
+        },
+        "pending": false
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/friends/548774f241726e53a7310000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=c5f1925fbd139b92f9fac892f59ff27b",
+      "request_data": null,
+      "response_data": {
+        "error": "Friendship not found"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "friendships#update": [
+    {
+      "verb": "PUT",
+      "path": "/v1/friends/548774f341726e53a73f0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=86194d54ac1e0801ab71065a420af659",
+      "request_data": "friendship[pending]=false",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/friends/548774f341726e53a7410000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=86194d54ac1e0801ab71065a420af659",
+      "request_data": "friendship[pending]=false",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/friends/548774f341726e53a7430000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=86194d54ac1e0801ab71065a420af659",
+      "request_data": "friendship[pending]=true",
+      "response_data": {
+        "error": [
+          "Parameter 'pending' can't be set to true!"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/v1/friends/wrongid",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=86194d54ac1e0801ab71065a420af659",
+      "request_data": "friendship[pending]=false",
+      "response_data": {
+        "error": "Pending friendship not found"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/friends/wrongid",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=86194d54ac1e0801ab71065a420af659",
+      "request_data": "friendship[pending]=false",
+      "response_data": {
+        "error": "Pending friendship not found"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "groups#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/groups",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=f80f686492cbc0516d8bf528c0bc119c",
+      "request_data": "group[_id]=548774f341726e53a7510000&group[title]=foo5&group[user_ids][]=548774f341726e53a74f0000&group[user_ids][]=548774f341726e53a7500000",
+      "response_data": {
+        "_id": {
+          "$oid": "548774f341726e53a7530000"
+        },
+        "title": "foo5",
+        "user_ids": [
+          {
+            "$oid": "548774f341726e53a74f0000"
+          },
+          {
+            "$oid": "548774f341726e53a7500000"
+          },
+          {
+            "$oid": "548774f341726e53a7520000"
+          }
+        ]
+      },
+      "code": 201,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "groups#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/v1/groups/548774f341726e53a7650000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=314f495c24acd757edffc11450ebe686",
+      "request_data": null,
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "groups#index": [
+    {
+      "verb": "GET",
+      "path": "/v1/groups",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=50a22544eb3507da1a03fc2e4be46007",
+      "request_data": null,
+      "response_data": [
+        {
+          "_id": {
+            "$oid": "548774f341726e53a74c0000"
+          },
+          "title": "foo2",
+          "user_ids": [
+            {
+              "$oid": "548774f341726e53a74b0000"
+            }
+          ]
+        },
+        {
+          "_id": {
+            "$oid": "548774f341726e53a74d0000"
+          },
+          "title": "foo3",
+          "user_ids": [
+            {
+              "$oid": "548774f341726e53a74b0000"
+            }
+          ]
+        },
+        {
+          "_id": {
+            "$oid": "548774f341726e53a74e0000"
+          },
+          "title": "foo4",
+          "user_ids": [
+            {
+              "$oid": "548774f341726e53a74b0000"
+            }
+          ]
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/groups",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=9b18772e66d42a2af817842e8314bbdc",
+      "request_data": null,
+      "response_data": [
+        {
+          "_id": {
+            "$oid": "548774f341726e53a7570000"
+          },
+          "title": "foo6",
+          "user_ids": [
+            {
+              "$oid": "548774f341726e53a7560000"
+            },
+            {
+              "$oid": "548774f341726e53a7540000"
+            },
+            {
+              "$oid": "548774f341726e53a7550000"
+            }
+          ]
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "groups#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/groups/548774f341726e53a75b0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=d44391fced5ccfeac2c9b36857e5ada0",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f341726e53a75b0000"
+        },
+        "title": "foo8",
+        "user_ids": [
+          {
+            "$oid": "548774f341726e53a75a0000"
+          },
+          {
+            "$oid": "548774f341726e53a7580000"
+          },
+          {
+            "$oid": "548774f341726e53a7590000"
+          }
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/groups/548774f341726e53a7650000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=93c761ccc62922b8e7bce570512065a7",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f341726e53a7650000"
+        },
+        "title": "foo11",
+        "user_ids": [
+          {
+            "$oid": "548774f341726e53a7620000"
+          },
+          {
+            "$oid": "548774f341726e53a7630000"
+          }
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "groups#update": [
+    {
+      "verb": "PATCH",
+      "path": "/v1/groups/548774f341726e53a75b0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=d44391fced5ccfeac2c9b36857e5ada0",
+      "request_data": "group[_id]=548774f341726e53a75c0000&group[title]=foo8&group[user_ids][]=548774f341726e53a75a0000&group[user_ids][]=548774f341726e53a7580000&group[user_ids][]=548774f341726e53a7590000",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/groups/wrong_id",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=c297ceee502fb99a2b398c0a01ad8667",
+      "request_data": "group[_id]=548774f341726e53a7610000&group[title]=foo10&group[user_ids][]=548774f341726e53a75f0000&group[user_ids][]=548774f341726e53a75d0000&group[user_ids][]=548774f341726e53a75e0000",
+      "response_data": {
+        "error": "no such group"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "login#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo31&password=foobar",
+      "response_data": {
+        "access_token": "fc1c68051f6bd9f902d1e5e7787d263d"
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo34&password=foobar",
+      "response_data": {
+        "access_token": "c5f1925fbd139b92f9fac892f59ff27b"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo39&password=foobar",
+      "response_data": {
+        "access_token": "679ef9e40934d16c560536a3e0c36d94"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo41&password=foobar",
+      "response_data": {
+        "access_token": "de2a62d86610da4ee2526ad507713d47"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo43&password=foobar",
+      "response_data": {
+        "access_token": "86194d54ac1e0801ab71065a420af659"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo49&password=foobar",
+      "response_data": {
+        "access_token": "91d41afc3a6d4642f1d8a7b995971df5"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo50&password=foobar",
+      "response_data": {
+        "access_token": "50a22544eb3507da1a03fc2e4be46007"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo53&password=foobar",
+      "response_data": {
+        "access_token": "f80f686492cbc0516d8bf528c0bc119c"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo56&password=foobar",
+      "response_data": {
+        "access_token": "9b18772e66d42a2af817842e8314bbdc"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo59&password=foobar",
+      "response_data": {
+        "access_token": "d44391fced5ccfeac2c9b36857e5ada0"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo62&password=foobar",
+      "response_data": {
+        "access_token": "c297ceee502fb99a2b398c0a01ad8667"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo65&password=foobar",
+      "response_data": {
+        "access_token": "314f495c24acd757edffc11450ebe686"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo66&password=foobar",
+      "response_data": {
+        "access_token": "16645a7684bf6963d8bd4886ccfdbbee"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=wrong&password=password",
+      "response_data": {
+      },
+      "code": 401,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo69&password=foobar",
+      "response_data": {
+        "access_token": "b4f095048e058aa386b237ddeb60825b"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo70&password=foobar",
+      "response_data": {
+        "access_token": "eedc00b19cee8649416312b7c6770251"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo71&password=foobar",
+      "response_data": {
+        "access_token": "1bc8ff96ef1c7957192786ebd480d885"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo72&password=foobar",
+      "response_data": {
+        "access_token": "d64d2bf8d2d1151a7d4df7ec5b58b908"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo73&password=foobar",
+      "response_data": {
+        "access_token": "36cb47bfd41135aeb034d02ba55cecae"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo75&password=foobar",
+      "response_data": {
+        "access_token": "46294b7fb9e750fcbbb2122c33fa8d08"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo77&password=foobar",
+      "response_data": {
+        "access_token": "cba71e4bb12fb231a390c4bdbc6b86ea"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo79&password=foobar",
+      "response_data": {
+        "access_token": "51c1c99fba5e617617038412e8215e0b"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo81&password=foobar",
+      "response_data": {
+        "access_token": "353722be35511426b6c4a543c6d80321"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "username=foo83&password=foobar",
+      "response_data": {
+        "access_token": "9edeee2b5e2a7c49081b846ee2503be3"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "messages#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/groups/548774f341726e53a76d0000/messages",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=eedc00b19cee8649416312b7c6770251",
+      "request_data": "message[_id]=548774f341726e53a76e0000&message[author_id]=548774f341726e53a76c0000&message[group_id]=548774f341726e53a76d0000&message[message_body]=foo3&message[timestamp]=2014-12-09+22%3A17%3A21+UTC",
+      "response_data": {
+        "_id": {
+          "$oid": "548774f341726e53a76f0000"
+        },
+        "author_id": {
+          "$oid": "548774f341726e53a76c0000"
+        },
+        "group_id": {
+          "$oid": "548774f341726e53a76d0000"
+        },
+        "message_body": "foo3",
+        "timestamp": "2014-12-09T22:17:23.985Z"
+      },
+      "code": 201,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "messages#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/v1/messages/548774f441726e53a7780000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=36cb47bfd41135aeb034d02ba55cecae",
+      "request_data": null,
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "messages#index": [
+    {
+      "verb": "GET",
+      "path": "/v1/groups/548774f341726e53a76a0000/messages",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=b4f095048e058aa386b237ddeb60825b",
+      "request_data": null,
+      "response_data": [
+        {
+          "_id": {
+            "$oid": "548774f341726e53a76b0000"
+          },
+          "author_id": {
+            "$oid": "548774f341726e53a7670000"
+          },
+          "group_id": {
+            "$oid": "548774f341726e53a76a0000"
+          },
+          "message_body": "foo2",
+          "timestamp": "2014-12-09T22:17:21.224Z"
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/groups/548774f341726e53a76a0000/messages",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=97b5defd5f3fca3c20bc74ccc4ee9876",
+      "request_data": null,
+      "response_data": [
+        {
+          "_id": {
+            "$oid": "548774f341726e53a76b0000"
+          },
+          "author_id": {
+            "$oid": "548774f341726e53a7670000"
+          },
+          "group_id": {
+            "$oid": "548774f341726e53a76a0000"
+          },
+          "message_body": "foo2",
+          "timestamp": "2014-12-09T22:17:21.224Z"
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/groups/548774f341726e53a76a0000/messages",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=c5c6d64687d80c75ae7f5779f5d6f688",
+      "request_data": null,
+      "response_data": {
+        "error": "No such group"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "messages#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/messages/548774f441726e53a7720000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=1bc8ff96ef1c7957192786ebd480d885",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a7720000"
+        },
+        "author_id": {
+          "$oid": "548774f441726e53a7700000"
+        },
+        "group_id": {
+          "$oid": "548774f441726e53a7710000"
+        },
+        "message_body": "foo4",
+        "timestamp": "2014-12-09T22:17:21.224Z"
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/messages/548774f441726e53a7750000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=d64d2bf8d2d1151a7d4df7ec5b58b908",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a7750000"
+        },
+        "author_id": {
+          "$oid": "548774f441726e53a7730000"
+        },
+        "group_id": {
+          "$oid": "548774f441726e53a7740000"
+        },
+        "message_body": "foo6",
+        "timestamp": "2014-12-09T22:17:21.224Z"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "messages#update": [
+    {
+      "verb": "PUT",
+      "path": "/v1/messages/548774f441726e53a7750000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=d64d2bf8d2d1151a7d4df7ec5b58b908",
+      "request_data": "message[message_body]=foo6",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "users#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "user[username]=foo74&user[password]=foobar&user[password_confirmation]=foobar&user[email]=foo76%40example.com&user[deviceid]=foo75bar",
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a7790000"
+        },
+        "deviceid": "foo75bar",
+        "email": "foo76@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo74"
+      },
+      "code": 201,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "user[pending]=true",
+      "response_data": {
+        "password": [
+          "can't be blank",
+          "can't be blank"
+        ],
+        "username": [
+          "can't be blank"
+        ],
+        "deviceid": [
+          "can't be blank"
+        ],
+        "email": [
+          "can't be blank",
+          "invalid email"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users#index": [
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77a0000"
+        },
+        "deviceid": "foo76bar",
+        "email": "foo77@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo75"
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=46294b7fb9e750fcbbb2122c33fa8d08",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77a0000"
+        },
+        "deviceid": "foo76bar",
+        "email": "foo77@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo75"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77a0000"
+        },
+        "deviceid": "foo76bar",
+        "email": "foo77@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo75"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=46294b7fb9e750fcbbb2122c33fa8d08",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77a0000"
+        },
+        "deviceid": "foo76bar",
+        "email": "foo77@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo75"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=notatoken",
+      "request_data": null,
+      "response_data": {
+        "message": "Invalid API Token"
+      },
+      "code": 401,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "message": "Invalid API Token"
+      },
+      "code": 401,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=cba71e4bb12fb231a390c4bdbc6b86ea",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77b0000"
+        },
+        "deviceid": "foo77bar",
+        "email": "foo78@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo76"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77b0000"
+        },
+        "deviceid": "foo77bar",
+        "email": "foo78@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo76"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=51c1c99fba5e617617038412e8215e0b",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77d0000"
+        },
+        "deviceid": "foo80bar",
+        "email": "foo81@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo79"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77d0000"
+        },
+        "deviceid": "foo80bar",
+        "email": "foo81@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo79"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=51c1c99fba5e617617038412e8215e0b",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77d0000"
+        },
+        "deviceid": "foo80bar",
+        "email": "foo81@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo79"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77d0000"
+        },
+        "deviceid": "foo80bar",
+        "email": "foo81@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo79"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/users/548774f441726e53a77e0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=353722be35511426b6c4a543c6d80321",
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77e0000"
+        },
+        "deviceid": "foo81bar",
+        "email": "foo82@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo80"
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/users/548774f441726e53a77e0000",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "_id": {
+          "$oid": "548774f441726e53a77e0000"
+        },
+        "deviceid": "foo81bar",
+        "email": "foo82@example.com",
+        "group_ids": [
+
+        ],
+        "username": "foo80"
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/users/548774f441726e53a7800000",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=9edeee2b5e2a7c49081b846ee2503be3",
+      "request_data": null,
+      "response_data": {
+        "error": "user not found"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/users/548774f441726e53a7800000",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "error": "user not found"
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users#update": [
+    {
+      "verb": "PATCH",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=cba71e4bb12fb231a390c4bdbc6b86ea",
+      "request_data": "user[username]=foo76&user[password]=foobar&user[password_confirmation]=foobar&user[email]=foo78%40example.com&user[deviceid]=foo77bar",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "user[username]=foo76&user[password]=foobar&user[password_confirmation]=foobar&user[email]=foo78%40example.com&user[deviceid]=foo77bar",
+      "response_data": null,
+      "code": 204,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=51c1c99fba5e617617038412e8215e0b",
+      "request_data": "user[_id]=548774f441726e53a77c0000&user[deviceid]=foo79bar&user[email]=foo80%40example.com&&user[username]=foo78",
+      "response_data": {
+        "username": [
+          "is already taken"
+        ],
+        "deviceid": [
+          "is already taken"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "user[_id]=548774f441726e53a77c0000&user[deviceid]=foo79bar&user[email]=foo80%40example.com&&user[username]=foo78",
+      "response_data": {
+        "username": [
+          "is already taken"
+        ],
+        "deviceid": [
+          "is already taken"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": "access_token=51c1c99fba5e617617038412e8215e0b",
+      "request_data": "user[_id]=548774f441726e53a77c0000&user[deviceid]=foo79bar&user[email]=foo80%40example.com&&user[username]=foo78",
+      "response_data": {
+        "username": [
+          "is already taken"
+        ],
+        "deviceid": [
+          "is already taken"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/v1/profile",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "user[_id]=548774f441726e53a77c0000&user[deviceid]=foo79bar&user[email]=foo80%40example.com&&user[username]=foo78",
+      "response_data": {
+        "username": [
+          "is already taken"
+        ],
+        "deviceid": [
+          "is already taken"
+        ]
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ]
+}

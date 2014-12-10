@@ -3,6 +3,8 @@ module V1
     before_filter :restrict_access
     # GET /groups
     # GET /groups.json
+    api :GET, "/v1/groups", "List requesters groups"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
     def index
       @groups = @current_user.get_groups
 
@@ -11,14 +13,33 @@ module V1
 
     # GET /groups/1
     # GET /groups/1.json
+    api :GET, "/v1/groups/:id", "Show a group"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :id, String, :required => true, :desc => "Group ID"
     def show
       @group = @current_user.get_group_by_id(params[:id])
 
       render json: @group
     end
 
+    def_param_group :group do
+      param :group, Hash, :action_aware => true, :required => true, :allows_nil => false do
+        param :title, String, :required => true
+        param :user_ids, Array, :required => true, :allows_nil => false
+      end
+    end
+
+    def_param_group :group_update do
+      param :group, Hash, :action_aware => true, :required => true, :allows_nil => false do
+        param :title, String, :required => true
+      end
+    end
+
     # POST /groups
     # POST /groups.json
+    api :POST, "/v1/groups", "Create a group"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param_group :group
     def create
       @group = @current_user.groups.new(group_create_params)
 
@@ -31,6 +52,12 @@ module V1
 
     # PATCH/PUT /groups/1
     # PATCH/PUT /groups/1.json
+    api :PATCH, "/v1/groups/:id", "Update a group"
+    api :PUT, "/v1/groups/:id", "Update a group"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :id, String, :required => true, :desc => "Group ID"
+    param_group :group_update
+    error :code => 404
     def update
       @group = @current_user.get_group_by_id(params[:id])
       if @group
@@ -46,6 +73,9 @@ module V1
 
     # DELETE /groups/1
     # DELETE /groups/1.json
+    api :DELETE, "/v1/groups/:id", "Destroy a group"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :id, String, :required => true, :desc => "Group ID"
     def destroy
       @group = @current_user.get_group_by_id(params[:id])
       if @group

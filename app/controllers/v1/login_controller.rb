@@ -3,6 +3,10 @@ module V1
     def new
     end
 
+    api :POST, "/v1/login", "Get access token"
+    error :code => 401
+    param :username, String, :required => true
+    param :password, String, :required => true
     def create
       user = User.find_by_username(params[:username])
       if user && user.authenticate(params[:password])

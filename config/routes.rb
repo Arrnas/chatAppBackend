@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  apipie
   namespace :v1, defaults: {format: 'json'} do
     resources :users, except: [:new, :edit, :destroy, :update]
     resources :friendships, except: [:new, :edit],path: "friends", shallow: true
