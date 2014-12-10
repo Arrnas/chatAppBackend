@@ -29,15 +29,15 @@ RSpec.describe "Groups", :type => :request do
       expect(convertId).to include(group.as_json(except:[:_id]))
     end
 
-    # it "should fail to create new group" do
-    #   user1 = create :user
-    #   user2 = create :user
-    #   group = build(:group, users: [user1,user2])
-    #   post access_token_path("/v1/groups"), "group" => group.as_json
-    #   group.users << current_user
-    #   expect(response).to be_success
-    #   expect(convertId).to include(group.as_json(except:[:_id]))
-    # end
+    it "should fail to create new group" do
+      user1 = create :user
+      user2 = create :user
+      group = build(:group, users: [user1,user2])
+      post access_token_path("/v1/groups"), "group" => group.as_json
+      group.users << current_user
+      expect(response).to be_success
+      expect(convertId).to include(group.as_json(except:[:_id]))
+    end
   end
 
   describe "GET /v1/groups/:id" do
@@ -82,6 +82,13 @@ RSpec.describe "Groups", :type => :request do
       expect(response).to be_success
       get access_token_path("/v1/groups/" << group.id, user1.access_token)
       expect(json).to_not include(current_user)
+    end
+    it "should fail to delete self from a group it doesn't belong to" do
+      user1 = create :user
+      user2 = create :user
+      group = create(:group, users: [user1,user2])
+      delete access_token_path("/v1/groups/" << group.id)
+      expect(response).to_not be_success
     end
   end
 
