@@ -26,6 +26,21 @@ module V1
       end
     end
 
+    # GET /users/asdf
+    # GET /users/asdf.json
+    api :GET, "/v1/users/:name", "Show an user"
+    param :access_token, String, :required => false, :desc => "Access token of the requesting user, can be passed in the request header"
+    param :name, String, :required => true, :desc => "User name"
+    error :code => 404
+    def showUser
+      @user = User.find_by_username(params[:name])
+      if @user
+        show_user @user
+      else
+        render json: { "error" => "user not found"}, status: :not_found
+      end
+    end
+
 
     def_param_group :user do
       param :user, Hash, :action_aware => true, :required => true, :allows_nil => false do

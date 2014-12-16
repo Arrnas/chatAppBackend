@@ -61,7 +61,7 @@ class User
     friend_friend = Friendship.where(:friend => self, :id => id, :pending => true)
     friend_friend
   end
-
+  
   def get_groups
     Group.where(:user_ids => self)
   end
