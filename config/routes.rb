@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     patch 'profile', to: 'users#update'
     put 'profile', to: 'users#update'
     get 'pending', to: 'friendships#index_pending'
+    get '/username/:name', to: 'users#showUser'
   end
 end
