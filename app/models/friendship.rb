@@ -32,7 +32,7 @@ class Friendship
   include Mongoid::Document
   belongs_to :owner, :class_name => "User"
   belongs_to :friend, :class_name => "User"
-  field :pending, type: Mongoid::Boolean, :default => true
+  field :pending, type: Mongoid::Boolean, :default => false
 
   validates_with FriendshipValidator, on: :create
   validates_with PendingValidator, on: :update
