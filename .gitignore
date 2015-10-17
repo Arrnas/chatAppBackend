@@ -11,3 +11,4 @@
 /log/*.log
 /tmp
 secrets.yml
+secret_token.rb
